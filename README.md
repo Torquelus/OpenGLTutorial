@@ -1,6 +1,6 @@
 # OpenGLTutorial
 
-# To Build
+## To Build
 
 Make a folder in the working directory called "build"
 > mkdir build
