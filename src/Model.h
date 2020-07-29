@@ -3,6 +3,7 @@
 #include <vector>
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+#include <glm/vec2.hpp>
 #include <glm/vec3.hpp>
 #include <glm/vec4.hpp>
 
@@ -13,6 +14,7 @@
 struct Vertex{
     glm::vec3 position;
     glm::vec4 colour;
+    glm::vec2 texCoord;
 };
 
 // Class for 3D Model

@@ -36,10 +36,4 @@ ShaderProgram::~ShaderProgram(){
 void ShaderProgram::Bind(){
 	// Use shader program
 	glUseProgram(m_ShaderProgram);
-
-	// Shader
-    int location = glGetUniformLocation(m_ShaderProgram, "testColour");
-	float timeValue = glfwGetTime();
-	float greenValue = (glm::sin(timeValue) / 2.0f) + 0.5f;
-    glUniform4f(location, 0.0f, greenValue, 0.0f, 1.0f);
 }

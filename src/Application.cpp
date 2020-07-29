@@ -46,24 +46,13 @@ Application::Application(int width, int height, const char* title){
 	// Set Clear Colour
 	glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 
-	const std::vector<Vertex> vertices1 = {
-        // positions         // colors
-        {{1.0f, -0.5f, 0.0f},  {1.0f, 0.0f, 0.0f, 1.0f}},  // bottom right
-        {{0.5f, -0.5f, 0.0f},  {0.0f, 1.0f, 0.0f, 1.0f}},  // bottom left
-        {{0.5f,  0.5f, 0.0f},  {0.0f, 0.0f, 1.0f, 1.0f}}   // top 
+	const std::vector<Vertex> vertices = {
+        {{-0.5f, -0.5f, 0.0f}, {0.5f, 0.44f, 0.8f, 1.0f}, {0.0f, 0.0f}},
+        {{-0.5f, 0.5f, 0.0f}, {0.5f, 0.44f, 0.8f, 1.0f}, {0.0f, 1.0f}},
+        {{0.5f, 0.5f, 0.0f}, {0.2f, 0.76f, 0.3f, 1.0f}, {1.0f, 1.0f}},
+		{{0.5f, -0.5f, 0.0f}, {0.2f, 0.76f, 0.3f, 1.0f}, {1.0f, 0.0f}}
     };
-
-    std::vector<unsigned int> indices1 = {
-        0, 1, 2
-    };
-
-	std::vector<Vertex> vertices2 = {
-        {{-0.5f, -0.5f, 0.0f}, {0.5f, 0.44f, 0.8f, 1.0f}},
-        {{-0.5f, 0.5f, 0.0f}, {0.5f, 0.44f, 0.8f, 1.0f}},
-        {{0.0f, 0.5f, 0.0f}, {0.2f, 0.76f, 0.3f, 1.0f}},
-		{{0.0f, 0.0f, 0.0f}, {0.2f, 0.76f, 0.3f, 1.0f}}
-    };
-    std::vector<unsigned int> indices2 = {
+    const std::vector<unsigned int> indices = {
         0, 1, 2,
 		2, 3, 0
     };
@@ -81,8 +70,7 @@ Application::Application(int width, int height, const char* title){
 	glBindVertexArray(m_VAO);
 
 	// Add 2 models
-	AddModel(vertices1, indices1, vertexShader, fragShader);
-	AddModel(vertices2, indices2, vertexShader, fragShader);
+	AddModel(vertices, indices, vertexShader, fragShader);
 }
 
 // Destructor
